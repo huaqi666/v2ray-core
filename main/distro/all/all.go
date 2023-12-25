@@ -34,6 +34,7 @@ import (
 	_ "github.com/v2fly/v2ray-core/v5/app/instman"
 	_ "github.com/v2fly/v2ray-core/v5/app/observatory"
 	_ "github.com/v2fly/v2ray-core/v5/app/restfulapi"
+	_ "github.com/v2fly/v2ray-core/v5/app/tun"
 
 	// Inbound and outbound proxies.
 	_ "github.com/v2fly/v2ray-core/v5/proxy/blackhole"
@@ -53,6 +54,8 @@ import (
 	_ "github.com/v2fly/v2ray-core/v5/proxy/vlite/inbound"
 	_ "github.com/v2fly/v2ray-core/v5/proxy/vlite/outbound"
 
+	_ "github.com/v2fly/v2ray-core/v5/proxy/shadowsocks2022"
+
 	// Transports
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/domainsocket"
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/grpc"
@@ -61,8 +64,19 @@ import (
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/quic"
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/tcp"
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/tls"
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/tls/utls"
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/udp"
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/websocket"
+
+	// Developer preview transports
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/request/assembly"
+
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/request/assembler/simple"
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/request/roundtripper/httprt"
+
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/request/stereotype/meek"
+
+	_ "github.com/v2fly/v2ray-core/v5/transport/internet/httpupgrade"
 
 	// Transport headers
 	_ "github.com/v2fly/v2ray-core/v5/transport/internet/headers/http"
@@ -98,4 +112,21 @@ import (
 	_ "github.com/v2fly/v2ray-core/v5/proxy/shadowsocks/simplified"
 	_ "github.com/v2fly/v2ray-core/v5/proxy/socks/simplified"
 	_ "github.com/v2fly/v2ray-core/v5/proxy/trojan/simplified"
+
+	// Subscription Supports
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/subscriptionmanager"
+
+	// Subscription Containers: general purpose
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/containers/base64urlline"
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/containers/dataurlsingle"
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/containers/jsonfieldarray"
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/containers/jsonfieldarray/jsonified"
+
+	// Subscription Fetchers
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/documentfetcher/dataurlfetcher"
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/documentfetcher/httpfetcher"
+
+	// Subscription Entries Converters
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/entries/nonnative"
+	_ "github.com/v2fly/v2ray-core/v5/app/subscription/entries/outbound" // Natively Supported Outbound Format
 )
